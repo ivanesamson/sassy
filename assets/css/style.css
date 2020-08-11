@@ -1,0 +1,274 @@
+header {
+  background-color: #fff;
+  padding: 0.5em 0;
+  -webkit-box-shadow: 0 0 1px #13253A;
+          box-shadow: 0 0 1px #13253A;
+}
+
+nav.stfy-header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.stfy-brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 100;
+}
+
+.stfy-brand img.logo {
+  margin-right: 5px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.stfy-brand h2 {
+  color: #13253A;
+}
+
+ul.stfy-main-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ul.stfy-main-menu li {
+  padding: 0 10px;
+  display: block;
+}
+
+ul.stfy-main-menu li a {
+  color: #13253A;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+  -webkit-transform: perspective(5px) translateZ(0.6);
+          transform: perspective(5px) translateZ(0.6);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+
+ul.stfy-main-menu li a:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: #6EC1E4;
+}
+
+/* Hamburgers */
+.stfy-hamburger {
+  display: none;
+}
+
+/* Fixed Header */
+body.fixed header {
+  padding: 0.2em 0;
+  background-color: #ffffffeb;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  /* Effect for switching from .fixed to static */
+  -webkit-animation: slide-down 0.7s;
+          animation: slide-down 0.7s;
+}
+
+body.fixed header .stfy-brand img.logo {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+body.fixed header .stfy-brand h2 {
+  color: #13253A;
+}
+
+body.fixed header ul.stfy-main-menu li a {
+  color: #13253A;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+body.fixed header ul.stfy-main-menu li a:hover, body.fixed header ul.stfy-main-menu li a:focus, body.fixed header ul.stfy-main-menu li a:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: #6EC1E4;
+}
+
+@-webkit-keyframes slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 990px) and (min-width: 769px) {
+  nav.stfy-header-nav {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav.stfy-header-nav {
+    width: 90%;
+  }
+  .stfy-hamburger {
+    display: block;
+    right: 0;
+    z-index: 100;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid #fff;
+  }
+  .stfy-hamburger:hover i {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  ul.stfy-main-menu {
+    display: none;
+    position: absolute;
+    top: 10.5vh;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 1;
+    padding: 0 30px 8vh;
+    -webkit-box-shadow: 0px 0 2px #9e9e9ecc;
+            box-shadow: 0px 0 2px #9e9e9ecc;
+    overflow-y: auto;
+    height: 100vh;
+  }
+  .stfy-hamburger {
+    z-index: 100;
+    color: #13253A;
+  }
+  .stfy-hamburger i {
+    cursor: pointer;
+  }
+  ul.stfy-main-menu.responsive {
+    display: block;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    /* Effect for switching from .fixed to static */
+    -webkit-animation: slide-down 0.4s;
+            animation: slide-down 0.4s;
+  }
+  ul.stfy-main-menu.responsive li {
+    border-bottom: 1px solid #e8e6e6;
+    padding: 10px 0;
+  }
+}
+
+.fade-in {
+  opacity: 1;
+  -webkit-animation-name: fadeInOpacity;
+          animation-name: fadeInOpacity;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fadeInOpacity {
+  0% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Catamaran', sans-serif;
+}
+
+body {
+  color: #000;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: .85em;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,168 @@
+
+@mixin flexCenter()  {
+    display: flex;
+    align-items: center;
+    // flex: $flex;
+}
+
+header {
+    background-color: #fff;
+    padding: 0.5em 0;
+    box-shadow:0 0 1px $db;
+  
+}
+nav.stfy-header-nav {
+    @include flexCenter();
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+}
+.stfy-brand {
+    @include flexCenter();
+    z-index: 100;
+    img.logo {
+        margin-right: 5px;
+        transition:all 1s;
+    }
+    h2 {
+        color: $db;
+    }
+}
+ul.stfy-main-menu {
+    @include flexCenter();
+    li {
+        padding: 0 10px;
+        display: block;
+
+        a {
+            color: $db;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            display: inline-block;
+            transform: perspective(5px) translateZ(0.6);
+            transition-duration: 0.3s;
+            transition-property: transform;
+            &:hover {
+                transform: scale(1.2);
+                color: $lb;
+            }
+        }
+    }
+}
+
+/* Hamburgers */
+.stfy-hamburger {
+    display: none;
+    
+}
+
+
+/* Fixed Header */
+body.fixed header {
+    padding: 0.2em 0;
+    background-color: #ffffffeb;
+    position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+    z-index: 99;
+    transform: translateZ(0);
+    transition:all 0.5s; /* Effect for switching from .fixed to static */
+    animation:slide-down 0.7s;
+
+    .stfy-brand img.logo{
+        transform: rotate(360deg);
+        transition:all 1s;
+    }
+    .stfy-brand h2 {
+        color: $db;
+    }
+    
+    ul.stfy-main-menu {
+        // margin-bottom: 10px;
+        li a {
+            color: $db;
+            font-size: 16px;
+            font-weight: 700;
+            &:hover, &:focus, &:active {
+                transform: scale(1.2);
+                color: $lb;
+            }
+        }
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    } 
+}
+
+
+@media screen and (max-width: 990px) and (min-width: 769px) {
+    nav.stfy-header-nav {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    nav.stfy-header-nav {
+        width: 90%;
+    }
+    .stfy-hamburger {
+        display: block;
+        right: 0;
+        z-index: 100;
+        padding: 5px 10px;
+        background-color: transparent;
+        border: 1px solid #fff;
+        &:hover {
+            
+            i {
+                transform: scale(1.2);
+            }
+        }
+        
+    }
+
+    ul.stfy-main-menu {
+        display: none;
+        position: absolute;
+        top:10.5vh;
+        left:0;
+        background-color: #fff;
+        width: 100%;
+        z-index: 1;
+        padding: 0 30px 8vh;
+        box-shadow: 0px 0 2px #9e9e9ecc;
+        overflow-y: auto;
+        height: 100vh;
+    }
+    .stfy-hamburger {
+        z-index: 100;
+        color: $db;
+        i {
+            cursor: pointer;
+        }
+    }
+    ul.stfy-main-menu.responsive  {
+        display: block;
+        transform: translateZ(0);
+        transition:all 0.5s; /* Effect for switching from .fixed to static */
+        animation:slide-down 0.4s;
+        li {
+            border-bottom: 1px solid #e8e6e6;
+            padding: 10px 0;
+          
+        }
+    }
+    
+
+}

@@ -1,0 +1,27 @@
+// @import "./fontawesome/scss/fontawesome";
+// @import "./fontawesome/scss/solid.scss";
+// @import "./fontawesome/scss/brands.scss";
+// @import "./fontawesome/scss/regular.scss";
+
+
+@import "./variables";
+@import "./header";
+@import "./transition";
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Catamaran', sans-serif;
+}
+body {
+	color: #000;
+}
+
+h1 { font-size: 3em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.3em; }
+h5 { font-size: 1em; }
+h6 { font-size: .85em; }
