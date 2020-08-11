@@ -172,12 +172,12 @@ body.fixed header ul.stfy-main-menu li a:hover, body.fixed header ul.stfy-main-m
   ul.stfy-main-menu {
     display: none;
     position: absolute;
-    top: 10.5vh;
     left: 0;
+    top: 0;
     background-color: #fff;
     width: 100%;
     z-index: 1;
-    padding: 0 30px 8vh;
+    padding: 12vh 30px 8vh;
     -webkit-box-shadow: 0px 0 2px #9e9e9ecc;
             box-shadow: 0px 0 2px #9e9e9ecc;
     overflow-y: auto;

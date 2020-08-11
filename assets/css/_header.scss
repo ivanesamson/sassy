@@ -135,12 +135,12 @@ body.fixed header {
     ul.stfy-main-menu {
         display: none;
         position: absolute;
-        top:10.5vh;
         left:0;
+        top:0;
         background-color: #fff;
         width: 100%;
         z-index: 1;
-        padding: 0 30px 8vh;
+        padding: 12vh 30px 8vh;
         box-shadow: 0px 0 2px #9e9e9ecc;
         overflow-y: auto;
         height: 100vh;
@@ -160,7 +160,6 @@ body.fixed header {
         li {
             border-bottom: 1px solid #e8e6e6;
             padding: 10px 0;
-          
         }
     }
     
